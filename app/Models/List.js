@@ -14,7 +14,7 @@ export class List{
     return /*html*/ `
     <div class="col-lg-4 p-2">
       <div class="card text-center">
-        <div class="card-header">
+        <div class="card-header" style="background-color:${this.color}">
           <div class="d-flex justify-content-between">
           <h4>          
               <span></span>
@@ -50,4 +50,5 @@ export class List{
     foundTasks.forEach(t => template += t.Template)
     return template
   }
+
 }

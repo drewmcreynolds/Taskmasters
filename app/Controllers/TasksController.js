@@ -8,20 +8,21 @@ export class TasksController{
     
   }
 
-  createTask(listId, taskId){
+  createTask(listId){
     event.preventDefault()
     let form = event.target
     
     let taskData = {
+      // @ts-ignore
       name: form.taskName.value,
-      taskId: taskId,
       listId: listId
     }
-    tasksService.createTask(taskData, taskId)
-    console.log('task creation', taskData, taskId);
+    tasksService.createTask(taskData)
+    console.log('task creation', taskData);
   }
 
   deleteTask(taskId){
     tasksService.deleteTask(taskId)
+    window.confirm("delete?")
   }
 }

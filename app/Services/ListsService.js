@@ -5,6 +5,9 @@ import { saveState } from "../Utils/LocalStorage.js";
 class ListsService{
   constructor(){
     ProxyState.on('lists', saveState)
+    ProxyState.on('tasks', saveState)
+    ProxyState.on('taskch', saveState)
+
   }
   createList(listData){
     ProxyState.lists = [...ProxyState.lists, new List(listData)]

@@ -3,8 +3,8 @@ import { generateId } from "../Utils/generateId.js"
 
 export class Task{
   constructor(taskData){
+    this.taskch = taskData.taskch
     this.name = taskData.name
-    this.taskId = taskData.taskId
     this.listId = taskData.listId
     this.id = taskData.id || generateId()
   }
@@ -16,11 +16,11 @@ export class Task{
           <div class="d-flex justify-content-between">
           <div class="form-group">
             <label for="taskch" class=""></label>
-            <input type="checkbox" name="taskch" id="taskch">
+            <input type="checkbox" name="taskch" id="taskkch">
           </div>
           <h4 id="taskId"><span></span>${this.name}</h4>
-          <i class="mdi mdi-delete-circle mdi-36px text-primary selectable ${this.taskId} ${this.name} ${this.id}" 
-            onclick="app.tasksController.deleteTask('${this.id} ${this.name} ')"></i>
+          <i class="mdi mdi-delete-circle mdi-36px text-primary selectable" 
+            onclick="app.tasksController.deleteTask('${this.id}')"></i>
           </div>         
          </div>
         </div>

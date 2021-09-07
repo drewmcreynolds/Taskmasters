@@ -17,11 +17,13 @@ export class ListsController {
   }
 
   createList(){
+
     event.preventDefault()
     let form = event.target
 
     let listData = {
      name: form.listName.value,
+     color: form.color.value
     }
     listsService.createList(listData)
     form.reset()
@@ -29,20 +31,7 @@ export class ListsController {
 
   deleteList(listId){
     listsService.deleteList(listId)
-    Swal.fire({
-      title: 'Do you want to save the changes?',
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Save',
-      denyButtonText: `Don't save`,
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-        Swal.fire('Saved!', '', 'success')
-      } else if (result.isDenied) {
-        Swal.fire('Changes are not saved', '', 'info')
-      }
-    })
-  }
+    window.confirm("delete?")
+    }
   
 }

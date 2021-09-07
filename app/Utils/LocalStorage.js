@@ -6,7 +6,9 @@ import { Task } from "../Models/Task.js";
 export function saveState(){
   localStorage.setItem('Taskmaster', JSON.stringify({
     lists: ProxyState.lists,
-    tasks: ProxyState.tasks
+    tasks: ProxyState.tasks,
+    
+    
   }))
 }
 

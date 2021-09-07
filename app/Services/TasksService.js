@@ -6,6 +6,7 @@ import { saveState } from "../Utils/LocalStorage.js";
 class TasksService{
   constructor(){
     ProxyState.on('tasks', saveState)
+    
   }
 
   createTask(taskData){
@@ -13,10 +14,11 @@ class TasksService{
     console.log('tasks in proxy', ProxyState.tasks);
   }
 
-  deleteTask(taskId, listId){
-    console.log('task delete', taskId, listId)
-    ProxyState.lists = ProxyState.lists.filter(l => l.id !== listId)
-    ProxyState.tasks = ProxyState.tasks.filter(t => t.taskId && listId !== taskId, listId)
+  deleteTask(taskId){
+    console.log('task delete', taskId)
+    
+    ProxyState.tasks = ProxyState.tasks.filter(t => t.id !== taskId)
+    console.log(ProxyState.tasks)
   }
 
 }
